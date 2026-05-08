@@ -59,7 +59,7 @@ Run the project using this file to generate example invoices.
 
 ## Project Structure
 ```bash
-invoice_automation/
+auto-invoive-generator-script/
 │
 ├── main.py               # Entry point
 ├── data_cleaner.py       # Cleans Excel/CSV data
