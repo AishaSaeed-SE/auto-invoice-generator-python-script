@@ -58,16 +58,13 @@ Run the project using this file to generate example invoices.
 ---
 
 ## Project Structure
-main.py               # Entry point — collects inputs and runs workflow
-data_cleaner.py       # Loads and cleans Excel/CSV data
-invoice_generator.py  # Generates professional PDF invoices
-utils.py              # Shared helper functions
-requirements.txt      # Python dependencies
-sample_data.csv       # Sample invoice data
-README.md             # Project documentation
-```
-
----
+main.py               (Entry point)
+data_cleaner.py       (cleans Excel/CSV data)
+invoice_generator.py  (Generates professional PDF invoices)
+utils.py              (Shared helper functions)
+requirements.txt      (Python dependencies)
+sample_data.csv       (Sample invoice data)
+README.md             (Project documentation)
 
 ## Output
 
