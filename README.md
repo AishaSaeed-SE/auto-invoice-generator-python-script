@@ -1,4 +1,4 @@
-# Invoice Generation Automation
+# Invoice Generation Automation Project
 
 A clean and professional Python automation tool that reads Excel or CSV invoice data and generates branded PDF invoices automatically.
 
