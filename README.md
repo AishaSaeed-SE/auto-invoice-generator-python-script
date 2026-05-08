@@ -1,80 +1,88 @@
-## Invoice Generation Automation
-A clean, professional Python tool that reads Excel or CSV invoice data and generates branded PDF invoices automatically.
+# Invoice Generation Automation
+
+A clean and professional Python automation tool that reads Excel or CSV invoice data and generates branded PDF invoices automatically.
 
 ## Features
+
 - Reads `.xlsx` (Excel) and `.csv` input files
 - Cleans common data issues automatically
 - Generates one professional PDF per invoice
 - Calculates subtotal, tax, and grand total
-- Handles version conflicts (`INV_1001_v2.pdf` if file already exists)
+- Handles version conflicts automatically  
+  (`INV_1001_v2.pdf` if the file already exists)
 
 ## Requirements
+
 - Python 3.10 or higher
 
 ## Installation
+
 ```bash
 pip install -r requirements.txt
 
-## Run 
+## Run the Project
 
 ```bash
 python main.py
----
 
-## Data Cleaning (Automatic)
+## Automatic Data Cleaning
 
-These common issues will be handled automatically:
+The script automatically handles common data issues:
 
-- Blank rows → removed
-- Duplicate rows → removed
-- Extra whitespace → trimmed
+- Removes blank rows
+- Removes duplicate rows
+- Trims extra whitespace
 - Missing customer name → `Unknown Customer`
 - Missing address/email → `N/A`
-- Missing dates → today's date
+- Missing dates → Today's date
 - Invalid Qty (e.g. `abc`) → `1`
 - Invalid Unit Price (e.g. `xyz`) → `0.00`
-- Supported date formats: `DD/MM/YYYY`, `YYYY-MM-DD`, `MM/DD/YYYY`, and more
 
+### Supported Date Formats
+
+- `DD/MM/YYYY`
+- `YYYY-MM-DD`
+- `MM/DD/YYYY`
 ---
 
 ## Sample File
 
-A sample CSV is included: `sample_data.csv`
+A sample CSV file is included:
 
-Run the tool with it to see example invoices generated.
+```bash
+sample_data.csv
+```
+
+Run the project using this file to generate example invoices.
 
 ---
 
 ## Project Structure
-
-```
-invoice_automation/
-├── main.py               # Entry point — collects inputs, orchestrates workflow
-├── data_cleaner.py       # Loads and cleans Excel/CSV data
-├── invoice_generator.py  # Builds professional PDF invoices via ReportLab
-├── utils.py              # Shared helpers (file naming, formatting, etc.)
-├── requirements.txt      # Python dependencies
-├── sample_data.csv       # Sample invoice data for testing
-└── README.md             # This file
+main.py               # Entry point — collects inputs and runs workflow
+data_cleaner.py       # Loads and cleans Excel/CSV data
+invoice_generator.py  # Generates professional PDF invoices
+utils.py              # Shared helper functions
+requirements.txt      # Python dependencies
+sample_data.csv       # Sample invoice data
+README.md             # Project documentation
 ```
 
 ---
 
 ## Output
 
-PDFs are saved to your chosen output folder:
+Generated PDFs are saved in your selected output folder:
 
-```
+```bash
 invoices_output/
 ├── INV_1001.pdf
 ├── INV_1002.pdf
 ├── INV_1003.pdf
 ```
 
-If a file already exists:
+If a file already exists, the tool automatically creates a new version:
 
+```bash
+INV_1001.pdf      # Original file
+INV_1001_v2.pdf   # New version
 ```
-INV_1001.pdf      ← original
-INV_1001_v2.pdf   ← on next run
-```
-
